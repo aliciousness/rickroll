@@ -35,7 +35,8 @@ jobs:
           --push \
           --tag=aliciousness/rickroll:5173-${GITHUB_REF##*/v} \
           --tag=aliciousness/rickroll:5173 \
-          -f 5173/dockerfile
+          -f 5173/dockerfile \
+          .
 
   rickroll-3000:
     runs-on: ubuntu-latest
@@ -67,4 +68,5 @@ jobs:
           --push \
           --tag=aliciousness/rickroll:3000-${GITHUB_REF##*/v} \
           --tag=aliciousness/rickroll:3000 \
-          -f 3000/dockerfile
+          -f 3000/dockerfile \
+          .
