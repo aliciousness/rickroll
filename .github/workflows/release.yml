@@ -7,7 +7,6 @@ on:
 jobs:
   rickroll-5173:
     runs-on: ubuntu-latest
-    environment: release
     steps:
       - uses: actions/checkout@v4
 
@@ -40,7 +39,6 @@ jobs:
 
   rickroll-3000:
     runs-on: ubuntu-latest
-    environment: release
     steps:
       - uses: actions/checkout@v4
 
