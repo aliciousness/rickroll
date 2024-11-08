@@ -55,11 +55,11 @@ jobs:
           # Update Docker Pulls badge
           sed -i "s|!\[Docker Pulls\](.*)|![Docker Pulls](https://img.shields.io/badge/Docker%20Pulls-$DOCKER_PULLS-blue)|" README.md
 
-          # Update Build Status badge using Shields.io for GitHub workflows
-          sed -i "s|\[!\[Build Status\](.*)|[![Build Status](https://img.shields.io/github/actions/workflow/status/${{ github.repository }}/release.yml?branch=main)]|" README.md
+          # # Update Build Status badge using Shields.io for GitHub workflows
+          # sed -i "s|\[!\[Build Status\](.*)|[![Build Status](https://img.shields.io/github/actions/workflow/status/${{ github.repository }}/release.yml?branch=main)]|" README.md
 
-          # Update Last Commit badge
-          sed -i "s|\[!\[GitHub last commit\](.*)|[![GitHub last commit](https://img.shields.io/badge/Last%20Commit-$LAST_COMMIT_DATE-yellow)]|" README.md
+          # # Update Last Commit badge
+          # sed -i "s|\[!\[GitHub last commit\](.*)|[![GitHub last commit](https://img.shields.io/badge/Last%20Commit-$LAST_COMMIT_DATE-yellow)]|" README.md
 
       - name: Commit changes
         run: |
