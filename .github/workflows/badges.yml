@@ -69,4 +69,4 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add README.md
           git commit -m "Update README labels"
-          gh pr create --title "Update README labels" --body "This PR updates the README labels from workflow ${{ env.BUILD_ID }} " --label "documentation"
+          git push origin main
