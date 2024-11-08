@@ -1,8 +1,8 @@
 # rickroll
-[![Docker Pulls](https://img.shields.io/badge/Docker%20Pulls-4-blue)]
+![Docker Pulls](https://img.shields.io/badge/Docker%20Pulls-4-blue)
 <!-- [![Docker Image Size (tag)]() -->
-[![Build Status](https://img.shields.io/github/actions/workflow/status/aliciousness/rickroll/release.yml?branch=main)](https://github.com/aliciousness/rickroll/actions/workflows/release.yml)]
-[![GitHub last commit](https://img.shields.io/badge/Last%20Commit-2024-11-08-yellow)]()]
+![Build Status](https://img.shields.io/github/actions/workflow/status/aliciousness/rickroll/release.yml?branch=main)](https://github.com/aliciousness/rickroll/actions/workflows/release.yml)
+[![GitHub last commit](https://img.shields.io/badge/Last%20Commit-2024-11-08-yellow)]
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/aliciousness)
 
 A Rickroll docker image using [this html](https://github.com/ShatteredDisk/rickroll)

@@ -59,7 +59,7 @@ jobs:
           sed -i "s|\[!\[Build Status\](.*)|[![Build Status](https://img.shields.io/github/actions/workflow/status/${{ github.repository }}/release.yml?branch=main)](https://github.com/${{ github.repository }}/actions/workflows/release.yml)|" README.md
 
           # Update Last Commit badge
-          sed -i "s|\[!\[GitHub last commit\](.*)|[![GitHub last commit](https://img.shields.io/badge/Last%20Commit-$LAST_COMMIT_DATE-yellow)]()|" README.md
+          sed -i "s|\[!\[GitHub last commit\](.*)|[![GitHub last commit](https://img.shields.io/badge/Last%20Commit-$LAST_COMMIT_DATE-yellow)]|" README.md
 
       - name: Commit changes
         run: |
