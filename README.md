@@ -1,4 +1,9 @@
 # rickroll
+![Docker Pulls]()
+![Docker Image Size (tag)]()
+[![Build Status](https://drone.modem7.com/api/badges/modem7/docker-rickroll/status.svg)]()
+[![GitHub last commit](https://img.shields.io/github/last-commit/modem7/docker-rickroll)]
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/aliciousness)
 
 A Rickroll docker image using [this html](https://github.com/ShatteredDisk/rickroll)
 
@@ -10,7 +15,7 @@ To install the images, clone the repository:
 git clone https://github.com/aliciousness/rickroll.git
 ```
 **OR**
-Use the public docker image found [here](https://hub.docker.com/repository/docker/aliciousness/rickroll/general)
+Use the public docker image found [here](https://hub.docker.com/r/aliciousness/rickroll)
 
 Image is based on nginxinc/nginx-unprivileged, and all the content is local to the container.
 
