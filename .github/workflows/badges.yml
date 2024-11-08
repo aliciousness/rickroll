@@ -1,0 +1,67 @@
+name: Update README Labels
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+env:
+  DOCKER_URL: https://hub.docker.com/r/aliciousness/rickroll
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Get Docker Pulls and Image Size
+        run: |
+          REPO_NAME="${{ github.repository }}"
+          DOCKER_DATA=$(curl -s "${{ env.DOCKER_URL}}")
+          PULLS=$(echo "$DOCKER_DATA" | jq .pull_count)
+          SIZE=$(echo "$DOCKER_DATA" | jq .full_size)
+
+          echo "DOCKER_PULLS=$PULLS" >> $GITHUB_ENV
+          # Convert bytes to MB
+          echo "IMAGE_SIZE=$(echo "$SIZE / 1048576" | bc) MB" >> $GITHUB_ENV
+
+      - name: Get Build Status
+        id: build_status
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { data: runs } = await github.actions.listWorkflowRuns({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'release.yml',
+              per_page: 1,
+              status: 'completed'
+            });
+            core.setOutput('status', runs.workflow_runs[0].conclusion || 'unknown');
+
+      - name: Get Last Commit Date
+        id: last_commit
+        run: |
+          LAST_COMMIT=$(git log -1 --format=%cd --date=short)
+          echo "LAST_COMMIT_DATE=$LAST_COMMIT" >> $GITHUB_ENV
+
+      - name: Update README
+        run: |
+          # Update Docker Pulls badge
+          sed -i "s|!\[Docker Pulls\](.*)|![Docker Pulls](https://img.shields.io/badge/Docker%20Pulls-$DOCKER_PULLS-blue)|" README.md
+
+          # Update Docker Image Size badge
+          sed -i "s|!\[Docker Image Size (tag)\](.*)|![Docker Image Size (tag)](https://img.shields.io/badge/Image%20Size-$IMAGE_SIZE-green)|" README.md
+
+          # Update Build Status badge using Shields.io for GitHub workflows
+          sed -i "s|\[!\[Build Status\](.*)|[![Build Status](https://img.shields.io/github/actions/workflow/status/${{ github.repository }}/release.yml?branch=main)](https://github.com/${{ github.repository }}/actions/workflows/release.yml)|" README.md
+
+          # Update Last Commit badge
+          sed -i "s|\[!\[GitHub last commit\](.*)|[![GitHub last commit](https://img.shields.io/badge/Last%20Commit-$LAST_COMMIT_DATE-yellow)]()|" README.md
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "Update README labels"
+          git push

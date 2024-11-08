@@ -30,7 +30,7 @@ jobs:
           docker buildx build \
           --platform=linux/amd64,linux/arm64 \
           --push \
-          --arg VERSION=${GITHUB_REF##*/v} \
+          --build-arg VERSION=${GITHUB_REF##*/v} \
           --tag=aliciousness/rickroll:${GITHUB_REF##*/v} \
           --tag=aliciousness/rickroll:latest \
           .
