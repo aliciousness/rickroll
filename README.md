@@ -1,8 +1,8 @@
 # rickroll
-![Docker Pulls]()
-![Docker Image Size (tag)]()
-[![Build Status](https://drone.modem7.com/api/badges/modem7/docker-rickroll/status.svg)]()
-[![GitHub last commit](https://img.shields.io/github/last-commit/modem7/docker-rickroll)]
+[![Docker Pulls]()]
+[![Docker Image Size (tag)]()
+[![Build Status]()]
+[![GitHub last commit]()]
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/aliciousness)
 
 A Rickroll docker image using [this html](https://github.com/ShatteredDisk/rickroll)

@@ -3,9 +3,13 @@ name: Update README Labels
 on:
   schedule:
     - cron: "0 0 * * *"
+
+  pull_request:
+
   workflow_dispatch:
 env:
   DOCKER_URL: https://hub.docker.com/r/aliciousness/rickroll
+  DOCKER_API: https://hub.docker.com/v2/repositories/aliciousness/rickroll
 jobs:
   update-readme:
     runs-on: ubuntu-latest
@@ -16,7 +20,7 @@ jobs:
       - name: Get Docker Pulls and Image Size
         run: |
           REPO_NAME="${{ github.repository }}"
-          DOCKER_DATA=$(curl -s "${{ env.DOCKER_URL}}")
+          DOCKER_DATA=$(curl -s "${{ env.DOCKER_API }}")
           PULLS=$(echo "$DOCKER_DATA" | jq .pull_count)
           SIZE=$(echo "$DOCKER_DATA" | jq .full_size)
 
