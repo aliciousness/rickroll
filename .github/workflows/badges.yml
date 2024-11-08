@@ -51,6 +51,9 @@ jobs:
           # Update Docker Pulls badge
           sed -i "s|!\[Docker Pulls\](.*)|![Docker Pulls](https://img.shields.io/badge/Docker%20Pulls-$DOCKER_PULLS-blue)|" README.md
 
+          # Latest Release badge
+          sed -i "s|\[!\[Latest Release\](.*)|[![Latest Release](${{ steps.check_release.outputs.badge_url }})]|" README.md
+
           # # Update Build Status badge using Shields.io for GitHub workflows
           # sed -i "s|\[!\[Build Status\](.*)|[![Build Status](https://img.shields.io/github/actions/workflow/status/${{ github.repository }}/release.yml?branch=main)]|" README.md
 

@@ -1,5 +1,6 @@
 # rickroll
 ![Docker Pulls](https://img.shields.io/badge/Docker%20Pulls-51-blue)
+![Latest Release]()
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/aliciousness)
 <!-- [![Docker Image Size (tag)]() -->
 <!-- ![Build Status](https://img.shields.io/github/actions/workflow/status/aliciousness/rickroll/release.yml?branch=main)]
