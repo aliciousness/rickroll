@@ -31,7 +31,7 @@ jobs:
           echo "IMAGE_SIZE=$(echo "$SIZE / 1048576" | bc) MB" >> $GITHUB_ENV
 
       - name: Check latest release and get badge URL
-        uses: gce-digital-marketing-infrastructure/ACTION-latest-release-badge@main
+        uses: aliciousness/ACTION-latest-release-badge@main
         id: check_release
         with:
           repo: ${{ github.repository }}
