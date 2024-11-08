@@ -2,7 +2,8 @@ name: Update README Labels
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    # Monthly CRON job
+    - cron: "0 0 1 * *"
   workflow_dispatch:
 env:
   DOCKER_URL: https://hub.docker.com/r/aliciousness/rickroll
