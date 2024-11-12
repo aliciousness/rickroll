@@ -1,4 +1,4 @@
-FROM nginxinc/nginx-unprivileged:1.25-bookworm
+FROM nginxinc/nginx-unprivileged:1.27-bookworm
 LABEL maintainer="Richard Craddock craddock9richard@gmail.com"
 LABEL version=$VERSION
 ARG VERSION
