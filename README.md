@@ -1,6 +1,6 @@
 # rickroll
-[![Docker Pulls](https://img.shields.io/badge/Docker%20Pulls-97-blue)](https://hub.docker.com/r/aliciousness/rickroll)
-[![Latest Release](https://img.shields.io/badge/release-v2.0.2-brightgreen)](https://github.com/aliciousness/ACTION-latest-release-badge/releases)
+[![Docker Pulls](https://img.shields.io/badge/Docker%20Pulls-213-blue)](https://hub.docker.com/r/aliciousness/rickroll)
+[![Latest Release](https://img.shields.io/badge/release-v2.0.3-brightgreen)](https://github.com/aliciousness/ACTION-latest-release-badge/releases)
 [!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/aliciousness)
 <!-- [![Docker Image Size (tag)]() -->
 <!-- ![Build Status](https://img.shields.io/github/actions/workflow/status/aliciousness/rickroll/release.yml?branch=main)]
