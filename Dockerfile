@@ -11,5 +11,6 @@ RUN apt update && apt install -y git \
   && chown -R nginx:nginx html \
   && mv html/rickroll.mp4 html/homepage.mp4 \
   && rm -rf rickroll
+RUN setcap 'cap_net_bind_service=+ep' /usr/sbin/nginx
 USER nginx
 CMD ["sh", "entrypoint"]
